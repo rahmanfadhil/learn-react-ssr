@@ -1,10 +1,13 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import App from './src/App'
+import App from '../src/App'
 import express from 'express'
+import path from 'path'
 const app = express()
 
-app.get('/bundle.js', (req, res) => res.sendFile(__dirname + '/public/bundle.js'))
+app.get('/bundle.js', (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../dist/client.bundle.js"))
+})
 
 app.get('**', (req, res) => {
   let html = renderToString(<App req={req}/>)
@@ -25,4 +28,4 @@ app.get('**', (req, res) => {
   `)
 })
 
-app.listen(8000, () => console.log('listening ...'))
+app.listen(8000, () => console.log('[server] listening...'))
