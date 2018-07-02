@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 export default class App extends React.Component {
   log() {
-    console.log('Hello')
+    console.log("Hello");
   }
   render() {
     return (
@@ -10,6 +10,6 @@ export default class App extends React.Component {
         <h1>Hello</h1>
         <button onClick={this.log}>Hello</button>
       </div>
-    )
+    );
   }
 }

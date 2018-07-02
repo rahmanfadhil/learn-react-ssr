@@ -1,10 +1,10 @@
-const path = require('path')
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: 'client.bundle.js',
-    path: path.resolve(__dirname, '../dist')
+    filename: "client.bundle.js",
+    path: path.resolve(__dirname, "../dist")
   },
   devServer: {
     port: 3000,
@@ -17,15 +17,15 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: {
           presets: ["es2015", "react"]
         }
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ["style-loader", "css-loader"]
       }
     ]
   }
-}
+};
